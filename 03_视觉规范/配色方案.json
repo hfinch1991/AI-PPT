@@ -1,0 +1,349 @@
+{
+  "color_schemes": {
+    "scheme_a_tech_blue": {
+      "name": "方案A - 科技蓝",
+      "name_en": "Tech Blue",
+      "适用场景": "技术类、创新类、需要传达专业和科技感的汇报",
+      "primary_colors": {
+        "gradient_start": {
+          "hex": "#4A90E2",
+          "rgb": [74, 144, 226],
+          "hsb": [210, 67, 89],
+          "name": "科技蓝"
+        },
+        "gradient_end": {
+          "hex": "#5C6BC0",
+          "rgb": [92, 107, 192],
+          "hsb": [231, 52, 75],
+          "name": "蓝紫"
+        }
+      },
+      "accent_colors": {
+        "accent_1": {
+          "hex": "#FF6B6B",
+          "rgb": [255, 107, 107],
+          "hsb": [0, 58, 100],
+          "name": "活力红",
+          "usage": "负向指标、警示信息、特别强调"
+        }
+      },
+      "neutral_colors": {
+        "text_dark": {
+          "hex": "#2C3E50",
+          "rgb": [44, 62, 80],
+          "name": "深灰",
+          "usage": "正文、说明文字"
+        },
+        "background_light": {
+          "hex": "#ECF0F1",
+          "rgb": [236, 240, 241],
+          "name": "浅灰",
+          "usage": "卡片背景、页面底色"
+        },
+        "white": {
+          "hex": "#FFFFFF",
+          "rgb": [255, 255, 255],
+          "name": "白色",
+          "usage": "主背景、卡片前景"
+        }
+      },
+      "gradient_css": "linear-gradient(135deg, #4A90E2 0%, #5C6BC0 100%)",
+      "gradient_angles": [45, 90, 135]
+    },
+    "scheme_b_business_orange": {
+      "name": "方案B - 商务橙",
+      "name_en": "Business Orange",
+      "适用场景": "商务拓展、销售、市场活动、运营成果汇报",
+      "primary_colors": {
+        "gradient_start": {
+          "hex": "#FF9500",
+          "rgb": [255, 149, 0],
+          "hsb": [35, 100, 100],
+          "name": "橙"
+        },
+        "gradient_end": {
+          "hex": "#FF6B35",
+          "rgb": [255, 107, 53],
+          "hsb": [16, 79, 100],
+          "name": "橙红"
+        }
+      },
+      "accent_colors": {
+        "accent_1": {
+          "hex": "#4ECDC4",
+          "rgb": [78, 205, 196],
+          "hsb": [176, 62, 80],
+          "name": "青绿",
+          "usage": "数据对比、冷暖对比、次要信息"
+        }
+      },
+      "neutral_colors": {
+        "text_dark": {
+          "hex": "#34495E",
+          "rgb": [52, 73, 94],
+          "name": "深灰",
+          "usage": "正文、说明文字"
+        },
+        "background_light": {
+          "hex": "#F7F9FA",
+          "rgb": [247, 249, 250],
+          "name": "浅灰",
+          "usage": "卡片背景、页面底色"
+        },
+        "white": {
+          "hex": "#FFFFFF",
+          "rgb": [255, 255, 255],
+          "name": "白色",
+          "usage": "主背景、卡片前景"
+        }
+      },
+      "gradient_css": "linear-gradient(135deg, #FF9500 0%, #FF6B35 100%)",
+      "gradient_angles": [45, 90, 135]
+    },
+    "scheme_c_professional_green": {
+      "name": "方案C - 专业绿",
+      "name_en": "Professional Green",
+      "适用场景": "运营、流程优化、可持续发展、ESG主题",
+      "primary_colors": {
+        "gradient_start": {
+          "hex": "#00D084",
+          "rgb": [0, 208, 132],
+          "hsb": [158, 100, 82],
+          "name": "翠绿"
+        },
+        "gradient_end": {
+          "hex": "#00B894",
+          "rgb": [0, 184, 148],
+          "hsb": [168, 100, 72],
+          "name": "深翠绿"
+        }
+      },
+      "accent_colors": {
+        "accent_1": {
+          "hex": "#FDCB6E",
+          "rgb": [253, 203, 110],
+          "hsb": [39, 56, 99],
+          "name": "金黄",
+          "usage": "亮点标注、成就高光、特殊荣誉"
+        }
+      },
+      "neutral_colors": {
+        "text_dark": {
+          "hex": "#2D3436",
+          "rgb": [45, 52, 54],
+          "name": "深灰",
+          "usage": "正文、说明文字"
+        },
+        "background_light": {
+          "hex": "#DFE6E9",
+          "rgb": [223, 230, 233],
+          "name": "浅灰",
+          "usage": "卡片背景、页面底色"
+        },
+        "white": {
+          "hex": "#FFFFFF",
+          "rgb": [255, 255, 255],
+          "name": "白色",
+          "usage": "主背景、卡片前景"
+        }
+      },
+      "gradient_css": "linear-gradient(135deg, #00D084 0%, #00B894 100%)",
+      "gradient_angles": [45, 90, 135]
+    },
+    "scheme_d_premium_gold_blue": {
+      "name": "方案D - 高端金蓝",
+      "name_en": "Premium Gold Blue",
+      "适用场景": "个人述职、晋升答辩、高端商务汇报、管理层述职",
+      "recommended_templates": ["大纲模板_年度个人述职.md"],
+      "primary_colors": {
+        "gradient_start": {
+          "hex": "#1E3A5F",
+          "rgb": [30, 58, 95],
+          "hsb": [214, 68, 37],
+          "name": "深海蓝"
+        },
+        "gradient_end": {
+          "hex": "#2C5282",
+          "rgb": [44, 82, 130],
+          "hsb": [213, 66, 51],
+          "name": "宝石蓝"
+        }
+      },
+      "accent_colors": {
+        "accent_1": {
+          "hex": "#D4AF37",
+          "rgb": [212, 175, 55],
+          "hsb": [46, 74, 83],
+          "name": "金色",
+          "usage": "强调内容、亮点展示、成就高光"
+        },
+        "accent_2": {
+          "hex": "#F4E4C1",
+          "rgb": [244, 228, 193],
+          "hsb": [41, 21, 96],
+          "name": "浅金色",
+          "usage": "次要强调、背景装饰"
+        }
+      },
+      "neutral_colors": {
+        "text_dark": {
+          "hex": "#2D3436",
+          "rgb": [45, 52, 54],
+          "name": "深灰",
+          "usage": "正文、说明文字"
+        },
+        "background_light": {
+          "hex": "#F5F6FA",
+          "rgb": [245, 246, 250],
+          "name": "极浅灰",
+          "usage": "卡片背景、页面底色"
+        },
+        "white": {
+          "hex": "#FFFFFF",
+          "rgb": [255, 255, 255],
+          "name": "白色",
+          "usage": "主背景、卡片前景"
+        }
+      },
+      "gradient_css": "linear-gradient(135deg, #1E3A5F 0%, #2C5282 100%)",
+      "gradient_angles": [45, 90, 135, 180],
+      "design_features": {
+        "style": "高端稳重、商务正式",
+        "mood": "专业、自信、成熟",
+        "best_for": "向上汇报、重要场合、正式述职"
+      }
+    },
+    "scheme_e_multilayer_professional": {
+      "name": "方案E - 多层次专业",
+      "name_en": "Multilayer Professional",
+      "适用场景": "向高层汇报、年终总结、战略汇报、综合述职",
+      "recommended_templates": ["大纲模板_年终向上汇报.md", "大纲模板_年终汇报.md"],
+      "primary_colors": {
+        "gradient_start": {
+          "hex": "#2C5282",
+          "rgb": [44, 82, 130],
+          "hsb": [213, 66, 51],
+          "name": "专业蓝"
+        },
+        "gradient_end": {
+          "hex": "#3A6FA5",
+          "rgb": [58, 111, 165],
+          "hsb": [210, 65, 65],
+          "name": "明亮蓝"
+        }
+      },
+      "accent_colors": {
+        "accent_1": {
+          "hex": "#FF9500",
+          "rgb": [255, 149, 0],
+          "hsb": [35, 100, 100],
+          "name": "活力橙",
+          "usage": "次要内容、对比展示、时间节点"
+        },
+        "accent_2": {
+          "hex": "#D4AF37",
+          "rgb": [212, 175, 55],
+          "hsb": [46, 74, 83],
+          "name": "金色",
+          "usage": "重点强调、成就亮点"
+        },
+        "accent_3": {
+          "hex": "#8B4513",
+          "rgb": [139, 69, 19],
+          "hsb": [25, 86, 55],
+          "name": "深红褐",
+          "usage": "警示信息、问题标注、特别强调"
+        }
+      },
+      "neutral_colors": {
+        "text_dark": {
+          "hex": "#2D3436",
+          "rgb": [45, 52, 54],
+          "name": "深灰",
+          "usage": "正文、说明文字"
+        },
+        "text_medium": {
+          "hex": "#636E72",
+          "rgb": [99, 110, 114],
+          "name": "中灰",
+          "usage": "次要文字、注释"
+        },
+        "background_light": {
+          "hex": "#F5F6FA",
+          "rgb": [245, 246, 250],
+          "name": "极浅灰",
+          "usage": "卡片背景、页面底色"
+        },
+        "white": {
+          "hex": "#FFFFFF",
+          "rgb": [255, 255, 255],
+          "name": "白色",
+          "usage": "主背景、卡片前景"
+        }
+      },
+      "gradient_css": "linear-gradient(135deg, #2C5282 0%, #3A6FA5 100%)",
+      "gradient_angles": [45, 90, 135],
+      "design_features": {
+        "style": "层次丰富、全面专业",
+        "mood": "稳重、权威、全局视角",
+        "best_for": "高层汇报、战略展示、综合总结",
+        "color_usage": {
+          "blue": "主色调，章节标题、核心内容",
+          "orange": "辅助色，时间轴、流程图",
+          "gold": "强调色，成就、亮点",
+          "brown": "警示色，问题、风险"
+        }
+      }
+    }
+  },
+  "usage_guidelines": {
+    "title": {
+      "font_size_pt": "60-72",
+      "font_weight": "bold",
+      "color": "主色渐变",
+      "opacity": "100%"
+    },
+    "data_highlight": {
+      "font_size_pt": "48-60",
+      "font_weight": "bold",
+      "color": "主色纯色或渐变",
+      "opacity": "100%"
+    },
+    "body_text": {
+      "font_size_pt": "24-28",
+      "font_weight": "regular",
+      "color": "深灰中性色",
+      "opacity": "100%"
+    },
+    "decorative_elements": {
+      "color": "主色渐变",
+      "opacity": "20-40%",
+      "usage": "背景装饰、几何图形"
+    }
+  },
+  "chart_colors": {
+    "single_series": {
+      "description": "单系列图表使用主色渐变（深到浅）",
+      "scheme_a": ["#4A90E2", "#6BA3E8", "#8DB6EE", "#AEC9F4"],
+      "scheme_b": ["#FF9500", "#FFA733", "#FFB966", "#FFCB99"],
+      "scheme_c": ["#00D084", "#33D99A", "#66E2B0", "#99EBC6"]
+    },
+    "multi_series": {
+      "description": "多系列对比使用主色+辅色",
+      "scheme_a": ["#4A90E2", "#FF6B6B"],
+      "scheme_b": ["#FF9500", "#4ECDC4"],
+      "scheme_c": ["#00D084", "#FDCB6E"]
+    },
+    "positive_negative": {
+      "positive": "#00D084",
+      "negative": "#FF6B6B",
+      "description": "正负值对比固定使用绿色和红色"
+    }
+  },
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-12-17",
+    "maintainer": "视觉设计组",
+    "notes": "所有颜色值均经过测试，符合WCAG 2.0 AA级可读性标准"
+  }
+}

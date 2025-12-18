@@ -1,0 +1,34 @@
+# AI PPT 导演系统 - Python依赖包
+# 安装方法：pip install -r requirements.txt
+
+# 数据处理
+numpy>=1.24.0
+pandas>=2.0.0
+
+# 数据可视化
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.14.0
+
+# PPT生成
+python-pptx>=0.6.21
+
+# 图像处理
+Pillow>=10.0.0
+
+# 颜色处理
+colour>=0.1.5
+
+# 命令行工具
+click>=8.1.0
+
+# JSON处理（Python 3.7+已内置，但列出以明确版本）
+# json - 内置模块
+
+# 可选：交互式图表支持
+# jupyter>=1.0.0
+# ipywidgets>=8.0.0
+
+# 开发工具（可选）
+# pytest>=7.3.0
+# black>=23.3.0

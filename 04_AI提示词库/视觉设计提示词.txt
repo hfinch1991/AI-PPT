@@ -1,0 +1,316 @@
+===========================================
+AI PPT 导演系统 - 视觉设计提示词库
+===========================================
+
+【使用说明】
+本文档包含用于生成PPT视觉元素的AI提示词
+主要用于DALL-E、Midjourney等图像生成AI
+
+===========================================
+提示词1：背景图生成（通用）
+===========================================
+
+Create a modern, minimalist background graphic for a business presentation slide.
+
+Style requirements:
+- Bright gradient from {color1_hex} to {color2_hex}
+- Clean geometric shapes (circles, lines, or polygons)
+- Layered depth effect with subtle shadows
+- High-end corporate aesthetic
+- 30% opacity maximum (mostly transparent)
+- Lots of white space (60%+ of canvas should be empty)
+- No text, no logos, no specific objects
+- Abstract and professional
+
+Technical specs:
+- Aspect ratio: 16:9
+- Resolution: 1920x1080px
+- File format: PNG with transparency
+
+使用示例：
+方案A（科技蓝）：
+Create a modern, minimalist background graphic for a business presentation slide.
+Style: bright gradient from #4A90E2 to #5C6BC0, clean geometric circles and lines,
+layered depth effect, high-end corporate aesthetic, 30% opacity maximum,
+lots of white space. No text. 16:9 aspect ratio.
+
+===========================================
+提示词2：封面背景生成
+===========================================
+
+Design a premium cover page background for a corporate presentation.
+
+Visual elements:
+- Main gradient: {color1} to {color2}, diagonal or radial
+- Abstract geometric patterns (hexagons/waves/circuits)
+- Subtle texture overlay (10% opacity)
+- Professional lighting effect (top-right light source)
+- Modern and sophisticated feel
+- Space for centered title text (50% of vertical space)
+
+Style keywords: {tech/business/innovative/professional}
+Mood: {confident/dynamic/stable/forward-thinking}
+
+Aspect ratio: 16:9
+Avoid: Stock photos, cliché imagery, excessive decoration
+
+===========================================
+提示词3：数据可视化装饰元素
+===========================================
+
+Create decorative elements for data visualization slides.
+
+Element type: {icons/abstract shapes/connecting lines}
+Style: Minimalist, geometric, modern
+Color scheme: {color_hex} with gradient
+Usage: To enhance charts and infographics
+Opacity: 40-60%
+Size: Small to medium (complementary, not dominant)
+
+Requirements:
+- Should not distract from actual data
+- Flat design or subtle 3D effect
+- Consistent with high-end business aesthetic
+- PNG format with transparent background
+
+===========================================
+提示词4：章节分隔页背景
+===========================================
+
+Design a chapter divider slide background for a business presentation.
+
+Visual concept:
+- Bold use of primary gradient ({color1} to {color2})
+- 60% solid color area + 40% white space
+- Asymmetric layout (left or right heavy)
+- Subtle pattern or texture in colored area
+- Clean separation between sections
+
+Purpose: Visual break between major sections
+Feel: Fresh start, new chapter, transition
+16:9 aspect ratio, modern corporate style
+
+===========================================
+提示词5：信息图表图标生成
+===========================================
+
+Generate a set of {number} minimalist icons for business infographics.
+
+Icon subjects: {list subjects, e.g., "growth, teamwork, innovation, quality"}
+Style:
+- Line art or flat design
+- Consistent stroke width
+- Monochrome (black or single color: {color_hex})
+- Circular or square frame (optional)
+- Clean and professional
+
+Technical:
+- Vector-style appearance
+- Transparent background
+- Same size for all icons
+- Suitable for {24x24mm} print size
+
+===========================================
+提示词6：渐变色色块生成
+===========================================
+
+Create abstract gradient color blocks for slide decoration.
+
+Design specs:
+- 3-5 overlapping transparent shapes
+- Main colors: {color1}, {color2}, {color3}
+- Soft edges with blur effect
+- Layered composition with depth
+- 20-40% opacity
+- Organic or geometric shapes
+
+Placement: {Top-right corner/Bottom-left/Background layer}
+Style: Soft, modern, not overwhelming
+16:9 canvas, PNG with transparency
+
+===========================================
+提示词7：数据仪表盘视觉元素
+===========================================
+
+Design a modern dashboard-style visual element for displaying key metrics.
+
+Components:
+- Circular or semi-circular gauge design
+- Gradient arc from {color1} to {color2}
+- Clean typography area for numbers
+- Minimal decoration
+- Professional tech aesthetic
+
+Inspiration: Apple Watch activity rings, Tesla dashboard
+Style: Futuristic yet professional, data-focused
+Format: Flat design with subtle shadows
+
+===========================================
+提示词8：时间轴视觉设计
+===========================================
+
+Create a modern timeline graphic for project milestones.
+
+Design elements:
+- Horizontal or vertical layout
+- Gradient connecting line ({color1} to {color2})
+- Circular milestone markers
+- Arrow or flow direction indicator
+- Space for text labels
+- Clean and minimalist
+
+Visual style: {Tech/Corporate/Creative}
+Emphasis: Clear progression, professional look
+Background: Transparent or white
+
+===========================================
+提示词9：3D几何装饰元素
+===========================================
+
+Generate 3D geometric shapes for presentation decoration.
+
+Shapes: {Spheres/Cubes/Pyramids/Cylinders/Abstract polyhedrons}
+Material: Glass or glossy plastic with gradient
+Colors: {Primary color from scheme}
+Lighting: Soft studio lighting, subtle shadows
+Style: Modern, minimalist, high-end
+
+Purpose: Visual interest without distraction
+Render quality: High, but not photorealistic (stylized)
+Background: Transparent
+Viewing angle: Slight perspective, not flat
+
+===========================================
+提示词10：波浪/曲线装饰生成
+===========================================
+
+Create flowing wave or curve graphics for slide decoration.
+
+Visual characteristics:
+- Smooth, organic curves
+- Gradient colors: {color1} to {color2}
+- Multiple layers with transparency
+- Flowing from {left/right/top/bottom}
+- Covers 20-30% of slide area
+- Leaves space for content
+
+Style: Fluid, dynamic, modern
+Mood: Motion, growth, continuity
+Format: Vector-style, clean edges, PNG with transparency
+
+===========================================
+高级技巧
+===========================================
+
+【技巧1：迭代优化】
+第1轮：使用基础提示词生成
+第2轮：根据结果追加要求，如"make it more minimalist" 或 "reduce opacity to 20%"
+第3轮：微调细节
+
+【技巧2：参考风格】
+在提示词中加入参考：
+- "in the style of Apple keynote presentations"
+- "inspired by Tesla user interface"
+- "similar to modern SaaS landing pages"
+
+【技巧3：排除不要的元素】
+使用 negative prompts（Midjourney支持）：
+--no text, no faces, no realistic objects, no photographs
+
+【技巧4：一致性】
+为同一份PPT生成多个元素时，在提示词中保持：
+- 相同的颜色代码
+- 相同的风格关键词
+- 相同的技术规格
+
+===========================================
+Midjourney专用参数
+===========================================
+
+基础模板：
+/imagine prompt: [your description] --ar 16:9 --style raw --v 6
+
+常用参数：
+--ar 16:9        (16:9宽高比，适合PPT)
+--ar 1:1         (1:1方形，适合图标)
+--style raw      (更简洁、少艺术化)
+--stylize 50     (减少风格化，更直接)
+--chaos 0        (减少随机性，更可控)
+--quality 2      (高质量渲染)
+
+示例完整提示词：
+/imagine prompt: modern minimalist business presentation background,
+bright gradient from blue to purple, geometric circles,
+lots of white space, corporate aesthetic, abstract, no text
+--ar 16:9 --style raw --stylize 50 --v 6
+
+===========================================
+DALL-E 3专用技巧
+===========================================
+
+1. 描述要具体但简洁（DALL-E 3会自动扩展提示词）
+2. 使用"flat design"或"vector style"获得更干净的效果
+3. 明确说明"no text"避免生成文字
+4. 使用"high-end corporate"等关键词确保专业感
+
+示例：
+A minimalist business slide background with a gradient from teal to blue,
+geometric patterns, lots of negative space, modern corporate aesthetic,
+flat design, no text, 16:9 aspect ratio
+
+===========================================
+色彩代码快速参考
+===========================================
+
+方案A - 科技蓝：
+Gradient: #4A90E2 to #5C6BC0
+Accent: #FF6B6B
+
+方案B - 商务橙：
+Gradient: #FF9500 to #FF6B35
+Accent: #4ECDC4
+
+方案C - 专业绿：
+Gradient: #00D084 to #00B894
+Accent: #FDCB6E
+
+AI可识别的颜色描述：
+- #4A90E2: "bright sky blue"
+- #5C6BC0: "soft purple-blue"
+- #FF9500: "vibrant orange"
+- #00D084: "bright teal green"
+
+===========================================
+质量检查清单
+===========================================
+
+生成的视觉元素应符合：
+□ 背景透明或纯白（便于叠加）
+□ 不包含任何文字
+□ 色彩符合预设方案
+□ 风格一致（同一PPT的所有元素）
+□ 不过度装饰（简约>复杂）
+□ 高分辨率（≥1920x1080）
+□ 适合投影展示（对比度合理）
+
+===========================================
+常见问题
+===========================================
+
+Q：生成的图像有文字怎么办？
+A：在提示词中强调"no text, no letters, no words"，多生成几次
+
+Q：颜色不对怎么办？
+A：使用准确的色值（如#4A90E2），而非模糊描述（如"蓝色"）
+
+Q：风格太花哨？
+A：加入"minimalist""corporate""clean""professional"等关键词
+
+Q：如何生成系列元素保持一致性？
+A：保存首次使用的完整提示词，后续使用相同的基础描述
+
+===========================================
+版本：v1.0
+更新日期：2025-12-17
+维护者：视觉设计组
+===========================================

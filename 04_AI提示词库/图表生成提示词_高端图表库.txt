@@ -1,0 +1,876 @@
+===========================================
+AI PPT 导演系统 - 图表生成提示词(高端图表库)
+基于真实PPT案例的专业图表代码模板
+===========================================
+
+【核心价值】
+本文档提供可直接运行的Python代码模板,生成符合高端商务标准的图表
+所有模板已经过验证,配色符合03_视觉规范/配色方案.json
+
+【新增配色方案支持】
+方案D - 高端金蓝:#1E3A5F → #2C5282 + #D4AF37
+方案E - 多层次专业:#2C5282 → #3A6FA5 + #FF9500 + #D4AF37 + #8B4513
+
+===========================================
+提示词1:生成大数字展示卡片图
+===========================================
+
+请生成Python代码,创建一个大数字展示页面(核心成果展示用):
+
+【需求】
+- 3-5个核心指标卡片
+- 每个卡片显示:大数字 + 增长率 + 一句话说明
+- 配色:深蓝和金色渐变
+- 布局:网格式或卡片式
+
+【Python代码模板】
+
+```python
+import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
+from matplotlib.patches import FancyBboxPatch
+import numpy as np
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['PingFang HK', 'Microsoft YaHei', 'SimHei']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 数据
+metrics = [
+    {"value": "3000万", "growth": "↑150%", "label": "GMV", "desc": "创历史新高"},
+    {"value": "500家", "growth": "↑80%", "label": "新客户", "desc": "市场扩张显著"},
+    {"value": "92%", "growth": "↑12pp", "label": "满意度", "desc": "行业领先"},
+]
+
+# 配色(方案D - 高端金蓝)
+colors = ['#2C5282', '#D4AF37', '#2C5282']  # 深蓝、金色交替
+
+# 创建图表
+fig, axes = plt.subplots(1, 3, figsize=(15, 5))
+fig.patch.set_facecolor('white')
+
+for idx, (ax, metric, color) in enumerate(zip(axes, metrics, colors)):
+    ax.set_xlim(0, 1)
+    ax.set_ylim(0, 1)
+    ax.axis('off')
+
+    # 绘制卡片背景
+    card = FancyBboxPatch((0.05, 0.1), 0.9, 0.8,
+                          boxstyle="round,pad=0.02",
+                          facecolor='#F8F9FA',
+                          edgecolor=color,
+                          linewidth=3,
+                          zorder=1)
+    ax.add_patch(card)
+
+    # 大数字
+    ax.text(0.5, 0.65, metric['value'],
+            ha='center', va='center',
+            fontsize=48, fontweight='bold',
+            color=color,
+            zorder=2)
+
+    # 增长率
+    ax.text(0.5, 0.45, metric['growth'],
+            ha='center', va='center',
+            fontsize=28, fontweight='bold',
+            color='#00D084' if '↑' in metric['growth'] else '#FF6B6B',
+            zorder=2)
+
+    # 标签
+    ax.text(0.5, 0.85, metric['label'],
+            ha='center', va='center',
+            fontsize=20,
+            color='#2D3436',
+            zorder=2)
+
+    # 说明
+    ax.text(0.5, 0.25, metric['desc'],
+            ha='center', va='center',
+            fontsize=16,
+            color='#636E72',
+            zorder=2)
+
+plt.tight_layout()
+plt.savefig('chart_big_numbers.png', dpi=300, bbox_inches='tight',
+            facecolor='white', edgecolor='none')
+plt.show()
+```
+
+【请根据我的数据修改此模板】
+我的数据:
+1. {数据1,如"GMV 3000万,↑150%,创历史新高"}
+2. {数据2}
+3. {数据3}
+
+===========================================
+提示词2:生成横向时间轴图(彩色时间段)
+===========================================
+
+请生成Python代码,创建一个横向时间轴,不同时间段用不同颜色标注:
+
+【需求】
+- 横向时间轴,4个时间段
+- 颜色:深蓝、金色、深蓝、深红褐(交替)
+- 每个时间段标注:时间范围、关键工作、成果数据
+- 底部:4个数据汇总卡片
+
+【Python代码模板】
+
+```python
+import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
+from matplotlib.patches import Rectangle, FancyBboxPatch
+import numpy as np
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['PingFang HK', 'Microsoft YaHei', 'SimHei']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 配色(方案E - 多层次专业)
+period_colors = ['#2C5282', '#D4AF37', '#2C5282', '#8B4513']
+
+# 时间段数据
+periods = [
+    {"time": "7月1日-8月31日", "label": "Q1", "work": "启动项目", "metric": "10人投入"},
+    {"time": "9月1日-9月30日", "label": "Q2", "work": "MVP上线", "metric": "DAU 1000"},
+    {"time": "10月1日-11月30日", "label": "Q3", "work": "功能迭代", "metric": "DAU 3000"},
+    {"time": "12月1日-12月31日", "label": "Q4", "work": "全面推广", "metric": "DAU 5000"},
+]
+
+# 创建图表
+fig, ax = plt.subplots(figsize=(16, 6))
+fig.patch.set_facecolor('white')
+ax.set_xlim(0, 10)
+ax.set_ylim(0, 10)
+ax.axis('off')
+
+# 标题
+ax.text(5, 9, '2025年下半年核心工作时间轴',
+        ha='center', va='center',
+        fontsize=32, fontweight='bold', color='#2D3436')
+
+# 绘制时间轴主线
+ax.plot([1, 9], [6, 6], color='#E0E0E0', linewidth=3, zorder=1)
+
+# 绘制时间段
+x_positions = np.linspace(1, 9, len(periods) + 1)
+for idx, (period, color) in enumerate(zip(periods, period_colors)):
+    x_start = x_positions[idx]
+    x_end = x_positions[idx + 1]
+    x_mid = (x_start + x_end) / 2
+
+    # 时间段色块
+    rect = Rectangle((x_start, 6.5), x_end - x_start, 1.5,
+                     facecolor=color, alpha=0.8, edgecolor='white',
+                     linewidth=2, zorder=2)
+    ax.add_patch(rect)
+
+    # 时间范围(在色块内)
+    ax.text(x_mid, 7.25, period['time'],
+            ha='center', va='center',
+            fontsize=10, color='white', fontweight='bold', zorder=3)
+
+    # 阶段标签(色块上方)
+    ax.text(x_mid, 8.3, period['label'],
+            ha='center', va='center',
+            fontsize=16, color=color, fontweight='bold')
+
+    # 关键工作(色块下方)
+    ax.text(x_mid, 5.5, period['work'],
+            ha='center', va='center',
+            fontsize=12, color='#2D3436')
+
+    # 成果数据
+    ax.text(x_mid, 4.8, period['metric'],
+            ha='center', va='center',
+            fontsize=14, color=color, fontweight='bold')
+
+    # 连接点
+    ax.plot(x_mid, 6, 'o', color=color, markersize=12, zorder=3)
+
+# 底部数据卡片
+bottom_metrics = [
+    {"value": "4个", "label": "阶段"},
+    {"value": "25%", "label": "增长率"},
+    {"value": "32个", "label": "项目数"},
+    {"value": "100%", "label": "达成率"},
+]
+
+card_x = np.linspace(1.5, 8.5, 4)
+for idx, (x, metric) in enumerate(zip(card_x, bottom_metrics)):
+    # 卡片背景
+    card = FancyBboxPatch((x - 0.4, 2), 0.8, 1.5,
+                          boxstyle="round,pad=0.02",
+                          facecolor='#F5F6FA',
+                          edgecolor='#E0E0E0',
+                          linewidth=1)
+    ax.add_patch(card)
+
+    # 数值
+    ax.text(x, 2.9, metric['value'],
+            ha='center', va='center',
+            fontsize=24, fontweight='bold', color='#2C5282')
+
+    # 标签
+    ax.text(x, 2.4, metric['label'],
+            ha='center', va='center',
+            fontsize=12, color='#636E72')
+
+plt.tight_layout()
+plt.savefig('chart_timeline_colored.png', dpi=300, bbox_inches='tight',
+            facecolor='white', edgecolor='none')
+plt.show()
+```
+
+【请根据我的数据修改此模板】
+我的时间段数据:
+{按时间顺序列出各阶段的时间、关键工作、成果}
+
+===========================================
+提示词3:生成分组柱状图(实际vs目标)
+===========================================
+
+请生成Python代码,创建一个分组柱状图展示实际vs目标对比:
+
+【需求】
+- 3-5个指标
+- 每个指标两个柱子:实际(深蓝)、目标(浅灰)
+- 柱子上方标注达成率(如120%)
+- 超额完成的用金色高亮
+
+【Python代码模板】
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['PingFang HK', 'Microsoft YaHei', 'SimHei']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 数据
+categories = ['GMV', '新客户', '客单价', '满意度']
+actual = [3000, 500, 6000, 92]
+target = [2500, 400, 5000, 80]
+completion = [120, 125, 120, 115]  # 达成率
+
+# 配色
+color_actual = '#2C5282'  # 深蓝
+color_target = '#E0E0E0'  # 浅灰
+color_exceed = '#D4AF37'  # 金色(超额完成)
+
+# 创建图表
+fig, ax = plt.subplots(figsize=(12, 7))
+fig.patch.set_facecolor('white')
+
+x = np.arange(len(categories))
+width = 0.35
+
+# 绘制柱状图
+bars1 = ax.bar(x - width/2, target, width, label='目标',
+              color=color_target, alpha=0.8, zorder=2)
+bars2 = ax.bar(x + width/2, actual, width, label='实际',
+              color=color_actual, alpha=0.9, zorder=2)
+
+# 标注达成率
+for idx, (bar, comp) in enumerate(zip(bars2, completion)):
+    height = bar.get_height()
+    color = color_exceed if comp >= 100 else color_actual
+
+    # 达成率标注
+    ax.text(bar.get_x() + bar.get_width()/2., height,
+            f'{comp}%',
+            ha='center', va='bottom',
+            fontsize=18, fontweight='bold',
+            color=color, zorder=3)
+
+    # 如果超额完成,柱子顶部加金色高亮
+    if comp >= 100:
+        bar.set_edgecolor(color_exceed)
+        bar.set_linewidth(3)
+
+# 美化
+ax.set_ylabel('数值', fontsize=16, color='#2D3436')
+ax.set_xlabel('指标', fontsize=16, color='#2D3436')
+ax.set_title('2025年目标达成情况:整体超额20%',
+             fontsize=24, fontweight='bold', color='#2D3436', pad=20)
+ax.set_xticks(x)
+ax.set_xticklabels(categories, fontsize=14)
+ax.legend(fontsize=14, loc='upper left')
+
+# 去掉上边框和右边框
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+ax.spines['left'].set_color('#E0E0E0')
+ax.spines['bottom'].set_color('#E0E0E0')
+ax.tick_params(colors='#7F8C8D', which='both')
+ax.grid(axis='y', color='#F0F0F0', linestyle='-', linewidth=0.5, alpha=0.7, zorder=1)
+
+plt.tight_layout()
+plt.savefig('chart_grouped_bar_comparison.png', dpi=300, bbox_inches='tight',
+            facecolor='white', edgecolor='none')
+plt.show()
+```
+
+===========================================
+提示词4:生成环形图(结构占比)
+===========================================
+
+请生成Python代码,创建一个现代风格的环形图(Donut Chart):
+
+【需求】
+- 展示结构占比(如产品结构、客户结构)
+- 使用渐变色序列(深到浅)
+- 最大占比扇区向外偏移
+- 中心显示总计或标题
+
+【Python代码模板】
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['PingFang HK', 'Microsoft YaHei', 'SimHei']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 数据
+labels = ['产品A', '产品B', '产品C', '其他']
+sizes = [40, 35, 15, 10]
+explode = (0.1, 0, 0, 0)  # 最大占比向外偏移
+
+# 配色(深蓝渐变序列)
+colors = ['#2C5282', '#3A6FA5', '#5A8FC4', '#8DB6EE']
+
+# 创建图表
+fig, ax = plt.subplots(figsize=(10, 8))
+fig.patch.set_facecolor('white')
+
+# 绘制环形图
+wedges, texts, autotexts = ax.pie(sizes, explode=explode, labels=labels,
+                                   colors=colors, autopct='%1.1f%%',
+                                   startangle=90, pctdistance=0.85,
+                                   wedgeprops=dict(width=0.4, edgecolor='white', linewidth=2))
+
+# 美化百分比文字
+for autotext in autotexts:
+    autotext.set_color('white')
+    autotext.set_fontsize(16)
+    autotext.set_fontweight('bold')
+
+# 美化标签文字
+for text in texts:
+    text.set_fontsize(14)
+    text.set_color('#2D3436')
+
+# 中心标题
+ax.text(0, 0, '营收结构\n3000万',
+        ha='center', va='center',
+        fontsize=20, fontweight='bold',
+        color='#2D3436')
+
+# 标题
+ax.set_title('产品营收结构:产品A占比最高(40%)',
+             fontsize=22, fontweight='bold', color='#2D3436', pad=20)
+
+plt.tight_layout()
+plt.savefig('chart_donut.png', dpi=300, bbox_inches='tight',
+            facecolor='white', edgecolor='none')
+plt.show()
+```
+
+===========================================
+提示词5:生成折线图(带渐变填充)
+===========================================
+
+请生成Python代码,创建一个带渐变填充的折线图展示趋势:
+
+【需求】
+- 展示时间序列趋势(如月度GMV)
+- 线条下方用渐变色填充
+- 关键点标注数值
+- 标注最高点和最低点
+
+【Python代码模板】
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib.patches import Polygon
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['PingFang HK', 'Microsoft YaHei', 'SimHei']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 数据
+months = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+values = [500, 550, 600, 580, 650, 700, 750, 800, 780, 850, 900, 950]
+
+# 配色
+line_color = '#2C5282'
+fill_color = '#2C5282'
+
+# 创建图表
+fig, ax = plt.subplots(figsize=(14, 7))
+fig.patch.set_facecolor('white')
+
+# 绘制折线
+line, = ax.plot(months, values, color=line_color, linewidth=3, marker='o',
+               markersize=8, markerfacecolor=line_color, markeredgecolor='white',
+               markeredgewidth=2, zorder=3)
+
+# 渐变填充
+x = np.arange(len(months))
+ax.fill_between(x, 0, values, alpha=0.3, color=fill_color, zorder=2)
+
+# 标注关键点
+max_idx = np.argmax(values)
+min_idx = np.argmin(values)
+
+# 最高点
+ax.annotate(f'最高:{values[max_idx]}万',
+           xy=(max_idx, values[max_idx]),
+           xytext=(max_idx, values[max_idx] + 100),
+           ha='center',
+           fontsize=14, fontweight='bold', color='#00D084',
+           bbox=dict(boxstyle='round,pad=0.5', facecolor='#00D084', alpha=0.2),
+           arrowprops=dict(arrowstyle='->', color='#00D084', lw=2))
+
+# 最低点
+ax.annotate(f'最低:{values[min_idx]}万',
+           xy=(min_idx, values[min_idx]),
+           xytext=(min_idx, values[min_idx] - 100),
+           ha='center',
+           fontsize=14, fontweight='bold', color='#FF6B6B',
+           bbox=dict(boxstyle='round,pad=0.5', facecolor='#FF6B6B', alpha=0.2),
+           arrowprops=dict(arrowstyle='->', color='#FF6B6B', lw=2))
+
+# 美化
+ax.set_xlabel('月份', fontsize=16, color='#2D3436')
+ax.set_ylabel('GMV(万元)', fontsize=16, color='#2D3436')
+ax.set_title('2025年月度GMV趋势:全年稳步增长',
+             fontsize=24, fontweight='bold', color='#2D3436', pad=20)
+
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+ax.spines['left'].set_color('#E0E0E0')
+ax.spines['bottom'].set_color('#E0E0E0')
+ax.tick_params(colors='#7F8C8D', which='both')
+ax.grid(axis='y', color='#F0F0F0', linestyle='-', linewidth=0.5, alpha=0.7, zorder=1)
+
+plt.tight_layout()
+plt.savefig('chart_line_gradient.png', dpi=300, bbox_inches='tight',
+            facecolor='white', edgecolor='none')
+plt.show()
+```
+
+===========================================
+提示词6:生成雷达图(能力维度)
+===========================================
+
+请生成Python代码,创建一个雷达图展示能力维度评估:
+
+【需求】
+- 5-8个维度
+- 可选:对比当前vs目标,或今年vs去年
+- 使用主色填充,透明度30%
+
+【Python代码模板】
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['PingFang HK', 'Microsoft YaHei', 'SimHei']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 数据
+categories = ['专业能力', '管理能力', '协作能力', '创新能力', '执行力']
+current = [85, 75, 90, 70, 88]
+target = [90, 85, 95, 80, 90]
+
+# 角度
+N = len(categories)
+angles = np.linspace(0, 2 * np.pi, N, endpoint=False).tolist()
+current += current[:1]  # 闭合
+target += target[:1]
+angles += angles[:1]
+
+# 配色
+color_current = '#2C5282'
+color_target = '#D4AF37'
+
+# 创建图表
+fig, ax = plt.subplots(figsize=(10, 10), subplot_kw=dict(projection='polar'))
+fig.patch.set_facecolor('white')
+
+# 绘制雷达图
+ax.plot(angles, current, 'o-', linewidth=2, color=color_current,
+        label='当前水平', markersize=8)
+ax.fill(angles, current, alpha=0.25, color=color_current)
+
+ax.plot(angles, target, 'o--', linewidth=2, color=color_target,
+        label='目标水平', markersize=8)
+ax.fill(angles, target, alpha=0.15, color=color_target)
+
+# 设置标签
+ax.set_xticks(angles[:-1])
+ax.set_xticklabels(categories, fontsize=14, color='#2D3436')
+
+# 设置刻度
+ax.set_ylim(0, 100)
+ax.set_yticks([20, 40, 60, 80, 100])
+ax.set_yticklabels(['20', '40', '60', '80', '100'],
+                   fontsize=10, color='#7F8C8D')
+
+# 网格线
+ax.grid(color='#E0E0E0', linestyle='-', linewidth=1)
+
+# 图例
+ax.legend(loc='upper right', bbox_to_anchor=(1.3, 1.1), fontsize=12)
+
+# 标题
+ax.set_title('能力提升评估:整体达成85%',
+             fontsize=22, fontweight='bold', color='#2D3436',
+             pad=30, y=1.08)
+
+plt.tight_layout()
+plt.savefig('chart_radar.png', dpi=300, bbox_inches='tight',
+            facecolor='white', edgecolor='none')
+plt.show()
+```
+
+===========================================
+提示词7:生成瀑布图(增长归因)
+===========================================
+
+请生成Python代码,创建一个瀑布图展示增长来源拆解:
+
+【需求】
+- 展示从起始值到最终值的增长路径
+- 增项用绿色,减项用红色,起始/终值用蓝色
+- 每个柱子标注数值
+
+【Python代码模板】
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['PingFang HK', 'Microsoft YaHei', 'SimHei']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 数据
+categories = ['去年GMV', '产品A增长', '产品B增长', '产品C增长', '今年GMV']
+values = [2000, 600, 300, 100, 3000]  # 最后一个是累积值
+changes = [0, 600, 300, 100, 0]  # 变化量
+
+# 计算瀑布图的起始位置
+starts = [0]
+for i in range(1, len(values) - 1):
+    starts.append(values[0] + sum(changes[1:i+1]))
+starts.append(0)
+
+# 配色
+colors = []
+for i, val in enumerate(changes):
+    if i == 0 or i == len(changes) - 1:
+        colors.append('#2C5282')  # 起始和终值:蓝色
+    elif val > 0:
+        colors.append('#00D084')  # 增项:绿色
+    else:
+        colors.append('#FF6B6B')  # 减项:红色
+
+# 创建图表
+fig, ax = plt.subplots(figsize=(12, 7))
+fig.patch.set_facecolor('white')
+
+# 绘制柱状图
+x = np.arange(len(categories))
+bars = ax.bar(x, values, bottom=starts, color=colors, alpha=0.8, width=0.6, zorder=2)
+
+# 连接线(虚线)
+for i in range(len(categories) - 1):
+    if i == 0:
+        y_start = values[0]
+    else:
+        y_start = starts[i] + values[i]
+
+    y_end = starts[i + 1]
+    ax.plot([i + 0.3, i + 0.7], [y_start, y_end],
+           'k--', linewidth=1, alpha=0.5, zorder=1)
+
+# 标注数值
+for idx, (bar, val, change) in enumerate(zip(bars, values, changes)):
+    height = bar.get_height()
+    y_pos = starts[idx] + height
+
+    # 累积值
+    ax.text(bar.get_x() + bar.get_width()/2., y_pos + 50,
+            f'{int(val)}万',
+            ha='center', va='bottom',
+            fontsize=16, fontweight='bold',
+            color='#2D3436', zorder=3)
+
+    # 变化量(只标注中间的增减项)
+    if 0 < idx < len(changes) - 1:
+        sign = '+' if change > 0 else ''
+        ax.text(bar.get_x() + bar.get_width()/2., y_pos - height/2,
+               f'{sign}{int(change)}万',
+               ha='center', va='center',
+               fontsize=14, fontweight='bold',
+               color='white', zorder=3)
+
+# 美化
+ax.set_ylabel('GMV(万元)', fontsize=16, color='#2D3436')
+ax.set_title('GMV增长1000万归因分析:产品A贡献60%',
+             fontsize=24, fontweight='bold', color='#2D3436', pad=20)
+ax.set_xticks(x)
+ax.set_xticklabels(categories, fontsize=14)
+
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+ax.spines['left'].set_color('#E0E0E0')
+ax.spines['bottom'].set_color('#E0E0E0')
+ax.tick_params(colors='#7F8C8D', which='both')
+ax.grid(axis='y', color='#F0F0F0', linestyle='-', linewidth=0.5, alpha=0.7, zorder=1)
+
+plt.tight_layout()
+plt.savefig('chart_waterfall.png', dpi=300, bbox_inches='tight',
+            facecolor='white', edgecolor='none')
+plt.show()
+```
+
+===========================================
+提示词8:生成热力图(多维度对比)
+===========================================
+
+请生成Python代码,创建一个热力图展示多维度数据对比:
+
+【Python代码模板】
+
+```python
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['PingFang HK', 'Microsoft YaHei', 'SimHei']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 数据
+row_labels = ['产品A', '产品B', '产品C', '产品D']
+col_labels = ['Q1', 'Q2', 'Q3', 'Q4']
+data = np.array([
+    [500, 600, 550, 700],
+    [450, 500, 480, 550],
+    [300, 350, 380, 420],
+    [200, 250, 280, 330]
+])
+
+# 创建图表
+fig, ax = plt.subplots(figsize=(10, 7))
+fig.patch.set_facecolor('white')
+
+# 绘制热力图
+sns.heatmap(data, annot=True, fmt='d', cmap='Blues',
+           xticklabels=col_labels, yticklabels=row_labels,
+           cbar_kws={'label': 'GMV(万元)'},
+           linewidths=2, linecolor='white',
+           annot_kws={'fontsize': 16, 'fontweight': 'bold'},
+           ax=ax)
+
+# 美化
+ax.set_title('各产品季度业绩热力图',
+            fontsize=24, fontweight='bold', color='#2D3436', pad=20)
+ax.set_xlabel('季度', fontsize=16, color='#2D3436')
+ax.set_ylabel('产品', fontsize=16, color='#2D3436')
+
+plt.tight_layout()
+plt.savefig('chart_heatmap.png', dpi=300, bbox_inches='tight',
+            facecolor='white', edgecolor='none')
+plt.show()
+```
+
+===========================================
+提示词9:生成堆叠面积图(结构变化趋势)
+===========================================
+
+请生成Python代码,创建一个堆叠面积图展示结构随时间的变化:
+
+【Python代码模板】
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['PingFang HK', 'Microsoft YaHei', 'SimHei']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 数据
+months = ['1月', '2月', '3月', '4月', '5月', '6月']
+product_a = [400, 450, 480, 500, 550, 600]
+product_b = [300, 320, 350, 380, 400, 450]
+product_c = [200, 220, 250, 280, 300, 350]
+
+# 配色(深到浅渐变)
+colors = ['#2C5282', '#5A8FC4', '#8DB6EE']
+
+# 创建图表
+fig, ax = plt.subplots(figsize=(12, 7))
+fig.patch.set_facecolor('white')
+
+# 绘制堆叠面积图
+ax.stackplot(months, product_a, product_b, product_c,
+            labels=['产品A', '产品B', '产品C'],
+            colors=colors, alpha=0.8)
+
+# 美化
+ax.set_xlabel('月份', fontsize=16, color='#2D3436')
+ax.set_ylabel('GMV(万元)', fontsize=16, color='#2D3436')
+ax.set_title('产品结构变化趋势:产品A占比持续提升',
+            fontsize=24, fontweight='bold', color='#2D3436', pad=20)
+ax.legend(loc='upper left', fontsize=14)
+
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+ax.spines['left'].set_color('#E0E0E0')
+ax.spines['bottom'].set_color('#E0E0E0')
+ax.tick_params(colors='#7F8C8D', which='both')
+ax.grid(axis='y', color='#F0F0F0', linestyle='-', linewidth=0.5, alpha=0.7, zorder=1)
+
+plt.tight_layout()
+plt.savefig('chart_stacked_area.png', dpi=300, bbox_inches='tight',
+            facecolor='white', edgecolor='none')
+plt.show()
+```
+
+===========================================
+提示词10:快速生成 - 一键生成所有核心图表
+===========================================
+
+【快速模式】
+
+请生成Python代码,一次性生成PPT核心成果章节需要的所有图表:
+
+1. 大数字展示卡片(3个核心指标)
+2. 时间轴图(季度进展)
+3. 实际vs目标对比柱状图
+4. 环形图(结构占比)
+5. 折线图(月度趋势)
+
+【我的数据】
+{粘贴所有数据}
+
+【输出要求】
+- 所有图表使用统一配色(方案D或方案E)
+- 所有图表保存为PNG(chart_1.png, chart_2.png, ...)
+- 所有图表尺寸适合PPT插入(宽度1000-1200px)
+- 所有图表高分辨率(DPI=300)
+- 生成一个主函数,依次调用生成所有图表
+
+===========================================
+配色方案代码库(快速复制)
+===========================================
+
+【方案A - 科技蓝】
+```python
+COLOR_SCHEME_A = {
+    "primary": "#4A90E2",
+    "secondary": "#5C6BC0",
+    "accent": "#FF6B6B",
+    "gradient": ["#4A90E2", "#6BA3E8", "#8DB6EE", "#AEC9F4"],
+    "text_dark": "#2C3E50",
+    "text_light": "#7F8C8D"
+}
+```
+
+【方案D - 高端金蓝】
+```python
+COLOR_SCHEME_D = {
+    "primary": "#2C5282",
+    "primary_deep": "#1E3A5F",
+    "accent_gold": "#D4AF37",
+    "accent_light_gold": "#F4E4C1",
+    "gradient": ["#1E3A5F", "#2C5282", "#3A6FA5"],
+    "text_dark": "#2D3436",
+    "background": "#F5F6FA"
+}
+```
+
+【方案E - 多层次专业】
+```python
+COLOR_SCHEME_E = {
+    "primary": "#2C5282",
+    "primary_light": "#3A6FA5",
+    "accent_orange": "#FF9500",  # 时间轴、流程
+    "accent_gold": "#D4AF37",    # 成就、亮点
+    "accent_brown": "#8B4513",   # 问题、风险
+    "gradient": ["#2C5282", "#3A6FA5", "#5A8FC4"],
+    "text_dark": "#2D3436",
+    "text_medium": "#636E72"
+}
+```
+
+===========================================
+常见问题及解决方案
+===========================================
+
+Q:中文字体显示方块?
+A:确保安装了中文字体,代码中设置:
+plt.rcParams['font.sans-serif'] = ['PingFang HK', 'Microsoft YaHei', 'SimHei']
+
+Q:图表背景透明?
+A:在savefig中设置 facecolor='white'
+
+Q:渐变色不够平滑?
+A:使用matplotlib的LinearSegmentedColormap:
+from matplotlib.colors import LinearSegmentedColormap
+cmap = LinearSegmentedColormap.from_list('custom', ['#2C5282', '#3A6FA5'])
+
+Q:数据标签重叠?
+A:调整字号、使用rotation参数旋转标签,或增大图表尺寸
+
+Q:如何让图表更"高端"?
+A:记住3个原则:
+1. 减少装饰(去边框、淡网格)
+2. 增加留白(不要填满整个画布)
+3. 使用渐变色(比纯色更有质感)
+
+===========================================
+与PPT整合建议
+===========================================
+
+【工作流程】
+1. 使用本提示词库生成图表 → 保存为PNG
+2. 在PPT中插入图片
+3. 调整大小(建议图表占幻灯片的60-70%)
+4. 添加标题和说明文字
+5. 确保图表与PPT整体配色一致
+
+【图表尺寸建议】
+- 全屏图表:1920x1080px
+- 半屏图表:960x1080px 或 1920x540px
+- 卡片图表:600x400px
+
+【DPI建议】
+- 演示用:150 DPI
+- 打印用:300 DPI
+- 高清大屏:300-600 DPI
+
+===========================================
+版本:v2.0(高端图表库)
+更新日期:2025-12-18
+更新内容:
+- 新增时间轴图表(彩色时间段)
+- 新增大数字展示卡片
+- 新增配色方案D和E支持
+- 所有代码模板可直接运行
+- 新增一键生成多图表功能
+- 优化了所有图表的视觉效果(更符合高端商务标准)
+更新依据:02_模板库中实际PPT案例的图表样式
+===========================================

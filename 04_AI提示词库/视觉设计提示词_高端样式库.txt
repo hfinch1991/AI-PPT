@@ -1,0 +1,549 @@
+===========================================
+AI PPT 导演系统 - 视觉设计提示词(高端样式库)
+基于18张PPT截图提取的视觉设计模式
+===========================================
+
+【核心价值】
+本文档包含从真实高端PPT案例中提取的视觉设计模式
+包括:波浪线连接、时间轴设计、半圆图、菱形对比图、环形展示等
+
+【新增配色方案】
+方案D - 高端金蓝:#1E3A5F → #2C5282(深蓝渐变) + #D4AF37(金色强调)
+方案E - 多层次专业:#2C5282 → #3A6FA5(蓝渐变) + #FF9500(橙) + #D4AF37(金) + #8B4513(深红褐)
+
+===========================================
+提示词1:波浪线连接的卡片流程图
+===========================================
+
+Create a horizontal card flow diagram with wave connectors for a business presentation.
+
+Design specifications:
+- Layout: 4 cards arranged horizontally
+- Connection: Smooth wave lines (~) connecting each card
+- Cards alternating colors:
+  Card 1: Deep blue #2C5282
+  Card 2: Gold #D4AF37
+  Card 3: Deep blue #2C5282
+  Card 4: Gold #D4AF37
+
+Card content structure:
+- Top: Bold title (12-14pt)
+- Middle: 3 bullet points
+- Bottom: Key metric or data
+
+Wave connector design:
+- Smooth S-curve between cards
+- Line width: 2-3pt
+- Color: Gradient from previous card to next card
+- Style: Flowing, professional, not cartoonish
+
+Visual style:
+- Modern, clean, corporate
+- Minimal shadows (subtle drop shadow only)
+- Rounded corners on cards (8-12px radius)
+- Ample white space between elements
+- 16:9 aspect ratio
+
+Technical specs:
+- PNG with transparent background
+- Resolution: 1920x1080px
+- Cards occupy center 70% of canvas
+- 30% white space for PPT text overlay
+
+===========================================
+提示词2:横向时间轴(彩色时间段标注)
+===========================================
+
+Design a horizontal timeline with colored time period blocks for project milestones.
+
+Timeline structure:
+- Horizontal line spanning 80% of width
+- 4 time periods with different colored blocks above the line
+- Each period marked with date range and key activities
+
+Color coding for periods:
+Period 1 (Jul): Deep blue #2C5282
+Period 2 (1-3月): Gold #D4AF37
+Period 3 (5月): Deep blue #2C5282
+Period 4 (6月): Deep red-brown #8B4513
+
+Each time block contains:
+- Time label (top): "7月1日-12月"
+- Key activities: 2-3 bullet points
+- Achievement metric: Large number or percentage
+
+Bottom data cards:
+- 4 summary metric cards below timeline
+- Format: "4个" "25%" "32%" "100%"
+- Arranged horizontally with labels
+- Minimal card design, icon optional
+
+Visual requirements:
+- Clean, minimalist design
+- No decorative elements
+- Professional corporate aesthetic
+- Clear hierarchy: time > activities > metrics
+- 16:9 aspect ratio, PNG format
+
+===========================================
+提示词3:半圆形占比展示图(左右标签)
+===========================================
+
+Create a semi-circular percentage diagram with labels for business execution methods.
+
+Diagram structure:
+- Left side: Semi-circle divided into 3 segments
+- Right side: Text labels aligned with each segment
+- Segments show percentages and descriptions
+
+Semi-circle segments (from top to bottom):
+Segment 1: 30% - Deep blue #2C5282
+- Icon + "工作效率提升30%"
+- Description text below
+
+Segment 2: 40% - Gold #D4AF37
+- Icon + "跨部门协作满意度40%"
+- Description text below
+
+Segment 3: 10% - Deep blue #2C5282
+- Icon + "流程优化率10%"
+- Description text below
+
+Right side labels:
+- Aligned with each segment
+- Bold label in colored box
+- Label examples: "选修化" "协作创新" "数据驱动"
+
+Visual style:
+- Clean, modern, data-focused
+- Flat design (no 3D effects)
+- Clear percentage labels inside segments
+- Connecting lines from segments to right labels
+- Ample white space
+
+Technical specs:
+- 16:9 aspect ratio
+- Semi-circle on left 40%, labels on right 40%, 20% margin
+- PNG with transparent background
+
+===========================================
+提示词4:菱形对比图(问题vs对策)
+===========================================
+
+Design a diamond comparison layout showing problems vs solutions.
+
+Layout structure:
+- Center: Diamond shape with "存在问题 ⟷ 解决方案"
+- Left side: 3 problem cards (deep blue #2C5282)
+- Right side: 3 solution cards (gold #D4AF37)
+- Arrows pointing from center to cards
+
+Problem cards (left):
+Card format:
+┌─────────────────┐
+│1. 跨部门协作效率不足│
+│ 问题描述:XXX      │
+└─────────────────┘
+
+Solution cards (right):
+Card format:
+┌─────────────────┐
+│1. 提高跨部门响应度│
+│ 措施:建立XX机制   │
+└─────────────────┘
+
+Visual requirements:
+- Cards aligned vertically, evenly spaced
+- Problems and solutions on same horizontal level
+- Diamond in center with gradient fill
+- Subtle connecting lines/arrows
+- Clean, professional, symmetrical
+- No excessive decoration
+
+Color scheme:
+- Left cards: Deep blue background, white text
+- Right cards: Gold background, dark text
+- Center diamond: Gradient blue to gold
+- Arrows: Neutral gray
+
+Technical specs:
+- 16:9 aspect ratio
+- Center diamond 20% width
+- Left cards 35%, right cards 35%, margins 10%
+- PNG format, high resolution
+
+===========================================
+提示词5:环形贡献展示图
+===========================================
+
+Create a circular contribution display with center theme and surrounding cards.
+
+Layout structure:
+- Center: Core theme "我的贡献 ⟷ 团队系统"
+- Top-left: Card with 90% metric
+- Top-right: Card with 88% metric
+- Bottom-left: Contribution item 1
+- Bottom-right: Contribution item 2
+- Bottom row: 4 horizontal cards for additional contributions
+
+Top metric cards:
+Format: Large percentage + description
+┌──────────┐
+│   90%    │
+│项目完成度  │
+└──────────┘
+
+Color coding:
+- Top-left: Deep blue #2C5282
+- Top-right: Gold #D4AF37
+- Bottom-left: Deep blue
+- Bottom-right: Gold
+- Bottom cards alternate: Blue, Gold, Blue, Red-brown #8B4513
+
+Bottom horizontal cards:
+[贡献三] [贡献四] [贡献五] [贡献六]
+- Small rectangular cards
+- Icon + title + brief description
+- Evenly spaced
+
+Visual style:
+- Circular/orbital layout
+- Clean connections from center to cards
+- Professional, organized
+- Balanced composition
+- Ample white space in center
+
+===========================================
+提示词6:大数字展示页(成果卡片)
+===========================================
+
+Design a key metrics showcase page with large numbers and cards.
+
+Page layout:
+- Title at top: "2025年核心成果一览"
+- 3-5 metric cards in grid layout
+- Each card contains: Big number + growth rate + description
+
+Card structure:
+┌────────────────────┐
+│    3000万          │  ← 48-60pt, bold, gradient color
+│    ↑150%           │  ← 24pt, with up arrow
+│  创历史新高         │  ← 18pt, description
+└────────────────────┘
+
+Color application:
+- Odd cards: Deep blue gradient #1E3A5F → #2C5282
+- Even cards: Gold gradient #D4AF37 → #E5BF4F
+- Growth indicators: Green #00D084 (positive), Red #FF6B6B (negative)
+
+Visual effects:
+- Subtle card shadows
+- Gradient backgrounds for numbers
+- Minimalist borders
+- Ample padding inside cards
+
+Layout options:
+Option 1: 2x2 grid (4 metrics)
+Option 2: 3x1 top row + 2x1 bottom row (5 metrics)
+Option 3: Asymmetric layout with one hero card
+
+Background:
+- White base
+- Optional: 20-30% opacity gradient decoration in corners
+- No distracting patterns
+
+===========================================
+提示词7:双层时间轴(工作+个人目标)
+===========================================
+
+Create a dual-layer timeline showing work goals (top) and personal goals (bottom).
+
+Timeline structure:
+- Horizontal timeline: Q1 → Q2 → Q3 → Q4
+- Each quarter represented by a card with arrow pointing right
+- Upper layer: Work-level objectives
+- Lower layer: Personal development objectives
+
+Quarter card design:
+Alternating colors:
+Q1: Deep blue #2C5282
+Q2: Gold #D4AF37
+Q3: Deep blue #2C5282
+Q4: Gold #D4AF37
+
+Card content:
+Top section (work):
+- 目标说明: Main objective
+- 行动计划: Key actions
+
+Bottom section (personal):
+- 个人目标: Personal goal
+- 能力提升: Skill development focus
+
+Visual connection:
+- Arrows between cards (→)
+- Parallel alignment of work and personal layers
+- Clear visual separation between layers
+- Connecting lines from work to personal goals
+
+Style:
+- Modern, forward-looking
+- Professional but humanized
+- Clean typography
+- Balanced information density
+
+===========================================
+提示词8:数据卡片组(底部汇总指标)
+===========================================
+
+Design a set of summary data cards for bottom of timeline or overview page.
+
+Card set structure:
+- 4 cards arranged horizontally
+- Equal width, minimal gaps
+- Compact, information-dense
+
+Individual card format:
+┌─────────┐
+│  [图标]  │
+│   14     │  ← Large number
+│  项目数   │  ← Label
+└─────────┘
+
+Data examples:
+Card 1: "4个" - 某项指标
+Card 2: "25%" - 增长率
+Card 3: "32%" - 完成率
+Card 4: "100%" - 达成率
+
+Visual design:
+- Minimal borders or no borders
+- Icon at top (optional, simple line icon)
+- Number: 36-48pt, bold
+- Label: 14-16pt, regular
+- Background: White or very light gray
+- Accent: Thin colored top border (matches theme color)
+
+Color coding:
+- Can use single theme color for all
+- Or: Different pastel shades per card
+- Keep it subtle, not overwhelming
+
+Use cases:
+- Bottom summary for timeline pages
+- Footer metrics for overview pages
+- Quick stats snapshot
+
+===========================================
+提示词9:渐变背景装饰元素
+===========================================
+
+Create subtle gradient background decoration elements for slides.
+
+Element types:
+
+Type 1: Corner gradient blob
+- Placement: Top-right or bottom-left corner
+- Shape: Organic, flowing blob shape
+- Colors:
+  方案D: #1E3A5F to #2C5282, 20% opacity
+  方案E: #2C5282 to #3A6FA5, 25% opacity
+- Coverage: 15-20% of slide area
+- Edge: Soft blur, no hard edges
+
+Type 2: Diagonal gradient band
+- Placement: From corner to opposite side
+- Width: 30-40% of slide width
+- Colors: Two-color gradient from scheme
+- Opacity: 15-20%
+- Angle: 45° or 135°
+
+Type 3: Abstract geometric pattern
+- Elements: Circles, lines, or hexagons
+- Arrangement: Scattered or grid-based
+- Colors: Single color from scheme
+- Opacity: 10-15%
+- Coverage: Background layer, very subtle
+
+Requirements for all:
+- Must not interfere with text readability
+- Low opacity (10-30% max)
+- Complement, not compete with content
+- Professional, not playful
+- PNG with transparency
+
+===========================================
+提示词10:高端封面背景
+===========================================
+
+Design a premium cover page background for annual report presentation.
+
+Visual concept:
+- Diagonal or radial gradient as base
+- Abstract geometric elements overlaid
+- Space for centered title (50% vertical space)
+- Professional lighting effect
+
+Gradient options:
+
+方案D (高端金蓝):
+- Base gradient: #1E3A5F (bottom-left) to #2C5282 (top-right)
+- Accent elements: Gold #D4AF37 geometric shapes (10% opacity)
+- Mood: Sophisticated, executive-level
+
+方案E (多层次专业):
+- Base gradient: #2C5282 (bottom) to #3A6FA5 (top)
+- Accent layer 1: Orange #FF9500 (5% opacity, corner)
+- Accent layer 2: Gold #D4AF37 thin lines or circuits
+- Mood: Comprehensive, strategic
+
+Geometric elements:
+- Hexagons, circles, or abstract lines
+- Semi-transparent (10-20% opacity)
+- Subtle 3D depth (optional slight shadow)
+- Modern tech aesthetic
+
+Lighting:
+- Top-right light source simulation
+- Subtle gradient highlights
+- Professional studio lighting feel
+
+Text space:
+- Center 50% kept relatively clear
+- Enough contrast for white or gold text
+- No busy patterns in text area
+
+Technical:
+- 16:9 aspect ratio
+- High resolution (1920x1080 minimum)
+- PNG format
+- Optimized for projection display
+
+===========================================
+配色方案完整参考
+===========================================
+
+【方案A - 科技蓝】
+主色渐变: #4A90E2 → #5C6BC0
+辅助色: #FF6B6B
+适用: 技术类、创新类汇报
+单色渐变序列: #4A90E2, #6BA3E8, #8DB6EE, #AEC9F4
+
+【方案B - 商务橙】
+主色渐变: #FF9500 → #FF6B35
+辅助色: #4ECDC4
+适用: 商务拓展、销售、市场活动
+单色渐变序列: #FF9500, #FFA733, #FFB966, #FFCB99
+
+【方案C - 专业绿】
+主色渐变: #00D084 → #00B894
+辅助色: #FDCB6E
+适用: 运营、流程优化、ESG主题
+单色渐变序列: #00D084, #33D99A, #66E2B0, #99EBC6
+
+【方案D - 高端金蓝】⭐新增
+主色渐变: #1E3A5F → #2C5282
+辅助色: #D4AF37 (金色), #F4E4C1 (浅金)
+适用: 个人述职、晋升答辩、高端商务汇报
+特点: 高端稳重、商务正式
+
+【方案E - 多层次专业】⭐新增
+主色渐变: #2C5282 → #3A6FA5
+辅助色1: #FF9500 (活力橙) - 用于时间轴、流程图
+辅助色2: #D4AF37 (金色) - 用于成就、亮点
+辅助色3: #8B4513 (深红褐) - 用于问题、风险
+适用: 向高层汇报、年终总结、战略汇报、综合述职
+特点: 层次丰富、全面专业
+
+【中性色(通用)】
+文字深色: #2D3436
+文字中灰: #636E72
+背景浅灰: #F5F6FA
+纯白: #FFFFFF
+
+===========================================
+Midjourney专用提示词示例
+===========================================
+
+【示例1:波浪线连接的卡片流程】
+/imagine prompt: business presentation graphic, 4 cards connected by smooth wave lines, horizontal layout, alternating deep blue and gold colors, minimalist corporate design, clean cards with rounded corners, flowing S-curve connectors, professional aesthetic, lots of white space, no text, 16:9 --ar 16:9 --style raw --stylize 50 --v 6
+
+【示例2:时间轴设计】
+/imagine prompt: horizontal timeline for business presentation, colored time period blocks, deep blue gold and red-brown sections, clean minimal design, professional corporate style, data cards at bottom, abstract and modern, no text, 16:9 aspect ratio --ar 16:9 --style raw --stylize 50 --v 6
+
+【示例3:半圆形占比图】
+/imagine prompt: semi-circular percentage diagram, left side pie chart, right side labels, blue and gold color segments, modern data visualization, clean corporate design, flat design, professional business aesthetic, minimal decoration, 16:9 --ar 16:9 --style raw --v 6
+
+【示例4:高端封面背景】
+/imagine prompt: premium business presentation cover background, diagonal gradient from dark navy blue #1E3A5F to royal blue #2C5282, subtle gold geometric elements, professional lighting, sophisticated corporate aesthetic, space for title text, modern luxury design, 16:9 --ar 16:9 --style raw --stylize 75 --v 6
+
+===========================================
+DALL-E 3专用提示词示例
+===========================================
+
+【示例1:菱形对比图】
+A business presentation graphic showing a diamond comparison layout. Center diamond with text area, left side has 3 deep blue cards for problems, right side has 3 gold cards for solutions. Symmetrical, clean, modern corporate design. Subtle arrows connecting center to cards. Professional aesthetic, minimal decoration, flat design, no text inside cards, 16:9 aspect ratio.
+
+【示例2:环形贡献展示】
+A circular contribution display diagram for business presentation. Center theme box, 4 cards surrounding it in orbital layout (top-left, top-right, bottom-left, bottom-right), plus 4 smaller cards at bottom in horizontal row. Alternating deep blue and gold colors. Clean, professional, modern corporate design, ample white space, 16:9 aspect ratio, no text.
+
+【示例3:大数字展示卡片】
+Modern metric showcase cards for business presentation. 3-4 cards in grid layout, each card designed for displaying large numbers and percentages. Clean card design with subtle shadows, gradient backgrounds in blue and gold. Minimalist borders, professional corporate aesthetic, lots of white space, 16:9 format, no text.
+
+===========================================
+质量检查清单
+===========================================
+
+生成的视觉元素应符合:
+□ 背景透明或纯白(便于叠加到PPT)
+□ 不包含任何实际文字(仅占位框)
+□ 配色符合预设方案(A/B/C/D/E之一)
+□ 风格一致(同一PPT的所有元素)
+□ 简约大于复杂(高端=简洁+质感)
+□ 高分辨率(1920x1080或更高)
+□ 适合投影展示(对比度合理,不过暗或过亮)
+□ 具体样式明确(波浪线/时间轴/半圆/菱形/环形等)
+
+===========================================
+常见问题及解决方案
+===========================================
+
+Q:如何确保波浪线连接自然流畅?
+A:在提示词中强调"smooth S-curve""flowing wave""natural connector",避免"zigzag"或"angular"
+
+Q:时间轴的颜色块如何区分但不冲突?
+A:使用同一色系的不同明度,或使用配色方案E的多颜色(蓝/橙/金/褐),确保都是专业色
+
+Q:菱形对比图如何保持对称美?
+A:明确要求"symmetrical layout""evenly spaced""aligned horizontally"
+
+Q:如何让环形展示不显得凌乱?
+A:强调"organized""orbital layout""clear spacing""ample white space in center"
+
+===========================================
+与其他工具的衔接
+===========================================
+
+【生成后的处理流程】
+1. AI生成图像 → 下载PNG
+2. 在PPT中插入为背景或前景元素
+3. 添加文字内容(使用配色方案中的文字颜色)
+4. 调整透明度(如需要)
+5. 确保文字可读性
+
+【推荐工具组合】
+- 背景装饰: Midjourney/DALL-E 3
+- 图表生成: Python (matplotlib/plotly)
+- 图标: Flaticon/Noun Project
+- 最终组装: PowerPoint/Keynote
+
+===========================================
+版本:v2.0(基于18张PPT截图分析)
+更新日期:2025-12-18
+更新内容:
+- 新增5种经过验证的视觉设计模式
+- 新增方案D(高端金蓝)和方案E(多层次专业)配色
+- 新增具体的Midjourney和DALL-E提示词示例
+- 新增双层时间轴、数据卡片等设计规范
+更新依据:02_模板库/PPT截图内容分析整理.md + 03_视觉规范/配色方案.json
+===========================================

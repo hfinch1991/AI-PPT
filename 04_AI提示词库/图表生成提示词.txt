@@ -1,0 +1,404 @@
+===========================================
+AI PPT 导演系统 - 图表生成提示词库
+===========================================
+
+【使用说明】
+本文档用于让AI生成Python代码来创建图表
+生成的图表符合"明亮、鲜艳、渐变、高端"的视觉要求
+
+===========================================
+提示词1：生成基础图表（通用模板）
+===========================================
+
+你是数据可视化专家，擅长用Python生成高端商务图表。
+
+请生成Python代码，创建一个{图表类型}：
+
+【数据】
+{粘贴数据，如：categories = ['Q1', 'Q2', 'Q3', 'Q4'], values = [85, 92, 88, 95]}
+
+【视觉要求】
+- 配色方案：{方案A科技蓝/方案B商务橙/方案C专业绿}
+- 渐变效果：使用渐变色填充
+- 字体：PingFang SC（中文）或 SF Pro（英文）
+- 标题：{图表标题}
+- 数据标注：在柱/点上方显示具体数值
+- 无网格线或仅保留横向网格线（浅灰色）
+- 去掉右边框和上边框（spine）
+- 背景：白色或透明
+
+【技术要求】
+- 使用matplotlib或plotly
+- 图表尺寸：10x6英寸
+- DPI：300（高清）
+- 保存为PNG格式：chart_{图表名称}.png
+
+请输出完整的Python代码，可直接运行。
+
+===========================================
+提示词2：柱状图生成
+===========================================
+
+请用Python生成一个高端柱状图：
+
+```python
+import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
+import numpy as np
+
+# 数据
+categories = {类别列表}
+values = {数值列表}
+
+# 配色（方案A - 科技蓝）
+colors = ['#4A90E2', '#5B7FCE', '#6D6FBB', '#7E5FA8']  # 渐变色
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['PingFang HK']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 创建图表
+fig, ax = plt.subplots(figsize=(10, 6))
+bars = ax.bar(categories, values, color=colors[:len(categories)], width=0.6)
+
+# 添加数据标签
+for bar in bars:
+    height = bar.get_height()
+    ax.text(bar.get_x() + bar.get_width()/2., height,
+            f'{height}%', ha='center', va='bottom',
+            fontsize=24, fontweight='bold', color='#2C3E50')
+
+# 美化
+ax.set_ylim(0, max(values) * 1.15)
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+ax.set_ylabel('{Y轴标签}', fontsize=20, color='#2C3E50')
+ax.set_xlabel('{X轴标签}', fontsize=20, color='#2C3E50')
+ax.set_title('{图表标题}', fontsize=24, fontweight='bold', color='#2C3E50', pad=20)
+
+plt.tight_layout()
+plt.savefig('chart_bar.png', dpi=300, bbox_inches='tight', facecolor='white')
+plt.show()
+```
+
+请根据我的数据修改此模板。
+
+===========================================
+提示词3：折线图生成（带渐变填充）
+===========================================
+
+请生成一个带渐变填充的折线图：
+
+【数据】
+x轴（时间）：{列表}
+y轴（数值）：{列表}
+
+【视觉特点】
+- 线条颜色：主色渐变起点色（如#4A90E2）
+- 线条粗细：3pt
+- 填充：线条下方用渐变色填充（透明度20-40%）
+- 数据点：圆形标记，大小适中
+- 关键点标注：{指定哪几个点需要标注数值}
+
+请使用matplotlib生成代码。
+
+===========================================
+提示词4：饼图/环形图生成
+===========================================
+
+请生成一个现代风格的环形图（donut chart）：
+
+【数据】
+标签：{列表}
+数值：{列表}
+
+【视觉要求】
+- 配色：使用主色渐变序列（深→浅）
+- 中心空白：40%（形成环形）
+- 数据标签：显示百分比 + 标签
+- 突出显示：最大占比的扇区向外偏移
+- 无边框线
+- 图例：放置在右侧
+
+【配色参考】
+方案A：['#4A90E2', '#6BA3E8', '#8DB6EE', '#AEC9F4']
+
+请输出matplotlib代码。
+
+===========================================
+提示词5：分组柱状图生成
+===========================================
+
+请生成一个分组柱状图用于多系列对比：
+
+【数据】
+类别：{列表，如['Q1', 'Q2', 'Q3', 'Q4']}
+系列1（{系列名称}）：{数值列表}
+系列2（{系列名称}）：{数值列表}
+系列3（可选）：{数值列表}
+
+【视觉要求】
+- 系列1颜色：主色（如#4A90E2）
+- 系列2颜色：辅色（如#FF6B6B）
+- 柱宽：0.35
+- 柱间距：适中
+- 图例：显示在顶部
+- 每个柱子上方标注数值
+
+请输出matplotlib代码。
+
+===========================================
+提示词6：堆叠柱状图生成
+===========================================
+
+请生成一个堆叠柱状图展示结构占比：
+
+【数据】
+类别：{列表}
+部分1：{数值列表}
+部分2：{数值列表}
+部分3：{数值列表}
+
+【视觉要求】
+- 使用渐变色序列（同色系，深→浅）
+- 每个部分显示百分比标签
+- 总高标注在顶部
+- 图例在右侧
+
+请输出matplotlib代码。
+
+===========================================
+提示词7：散点图生成
+===========================================
+
+请生成一个散点图展示相关性：
+
+【数据】
+X轴（{变量名}）：{数值列表}
+Y轴（{变量名}）：{数值列表}
+
+【视觉要求】
+- 散点颜色：主色渐变（可根据第三变量着色）
+- 散点大小：中等
+- 添加趋势线（线性回归）
+- 趋势线颜色：辅色，虚线
+- 标注相关系数 R²
+
+请输出matplotlib或seaborn代码。
+
+===========================================
+提示词8：雷达图生成
+===========================================
+
+请生成一个雷达图（蜘蛛图）：
+
+【数据】
+维度：{列表，如['质量', '速度', '成本', '服务', '创新']}
+当前值：{数值列表}
+目标值（可选）：{数值列表}
+
+【视觉要求】
+- 填充颜色：主色，透明度30%
+- 边线颜色：主色，粗线
+- 最大刻度：100
+- 显示网格线（浅灰色圆圈）
+- 如有两组数据，用主色和辅色区分
+
+请输出matplotlib代码。
+
+===========================================
+提示词9：瀑布图生成
+===========================================
+
+请生成一个瀑布图（Waterfall Chart）展示累积变化：
+
+【数据】
+项目：{列表，如['起始值', '增项1', '增项2', '减项1', '最终值']}
+数值：{列表，正数为增加，负数为减少}
+
+【视觉要求】
+- 正值：绿色（#00D084）
+- 负值：红色（#FF6B6B）
+- 起始和最终：蓝色（主色）
+- 连接线：灰色虚线
+- 每个柱子标注具体数值
+
+请输出matplotlib代码（可能需要使用waterfall_chart库）。
+
+===========================================
+提示词10：热力图生成
+===========================================
+
+请生成一个热力图展示多维度数据：
+
+【数据】
+行标签：{列表}
+列标签：{列表}
+数值矩阵：{二维数组}
+
+【视觉要求】
+- 配色：从白色到主色的渐变（或使用 'Blues' colormap）
+- 显示数值：在每个格子中央
+- 数值字体：根据背景深浅自动调整颜色（深背景用白字，浅背景用黑字）
+- 无网格线
+- 色卡（colorbar）显示在右侧
+
+请输出seaborn或matplotlib代码。
+
+===========================================
+高级图表技巧
+===========================================
+
+【技巧1：双Y轴图表】
+用于展示两个不同量级的指标：
+```python
+fig, ax1 = plt.subplots()
+ax2 = ax1.twinx()
+ax1.plot(x, y1, color='#4A90E2')
+ax2.plot(x, y2, color='#FF6B6B')
+```
+
+【技巧2：组合图（柱+线）】
+柱状图展示绝对值，折线展示增长率：
+```python
+ax1.bar(x, values, color='#4A90E2')
+ax2 = ax1.twinx()
+ax2.plot(x, growth_rate, color='#FF6B6B', marker='o')
+```
+
+【技巧3：添加参考线】
+标注目标线或平均线：
+```python
+ax.axhline(y=target_value, color='red', linestyle='--',
+           label='目标值', linewidth=2)
+```
+
+【技巧4：渐变色填充】
+柱状图使用渐变色（需要额外库）：
+```python
+from matplotlib.colors import LinearSegmentedColormap
+cmap = LinearSegmentedColormap.from_list('custom', ['#4A90E2', '#5C6BC0'])
+```
+
+===========================================
+配色方案代码
+===========================================
+
+【方案A - 科技蓝】
+```python
+# 单色渐变（4级）
+colors_blue = ['#4A90E2', '#5B7FCE', '#6D6FBB', '#7E5FA8']
+
+# 主色+辅色（对比）
+color_primary = '#4A90E2'
+color_accent = '#FF6B6B'
+
+# 文字颜色
+color_text = '#2C3E50'
+color_text_light = '#7F8C8D'
+```
+
+【方案B - 商务橙】
+```python
+colors_orange = ['#FF9500', '#FFA733', '#FFB966', '#FFCB99']
+color_primary = '#FF9500'
+color_accent = '#4ECDC4'
+color_text = '#34495E'
+```
+
+【方案C - 专业绿】
+```python
+colors_green = ['#00D084', '#33D99A', '#66E2B0', '#99EBC6']
+color_primary = '#00D084'
+color_accent = '#FDCB6E'
+color_text = '#2D3436'
+```
+
+===========================================
+通用代码片段
+===========================================
+
+【片段1：设置中文字体】
+```python
+plt.rcParams['font.sans-serif'] = ['PingFang HK', 'Microsoft YaHei', 'SimHei']
+plt.rcParams['axes.unicode_minus'] = False
+```
+
+【片段2：美化坐标轴】
+```python
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+ax.spines['left'].set_color('#E0E0E0')
+ax.spines['bottom'].set_color('#E0E0E0')
+ax.tick_params(colors='#7F8C8D', which='both')
+ax.grid(axis='y', color='#F0F0F0', linestyle='-', linewidth=0.5)
+```
+
+【片段3：高清导出】
+```python
+plt.savefig('chart_name.png', dpi=300, bbox_inches='tight',
+            facecolor='white', edgecolor='none')
+```
+
+【片段4：数据标签自动定位】
+```python
+for i, v in enumerate(values):
+    ax.text(i, v + 0.5, str(v), ha='center', va='bottom',
+            fontsize=20, fontweight='bold', color='#2C3E50')
+```
+
+===========================================
+常见问题
+===========================================
+
+Q：中文显示乱码怎么办？
+A：安装中文字体，并在代码开头设置：
+```python
+plt.rcParams['font.sans-serif'] = ['PingFang HK']
+```
+
+Q：图表保存后背景是透明的？
+A：在savefig中加入 facecolor='white'
+
+Q：渐变色如何实现？
+A：使用颜色列表，从深到浅排列，matplotlib会自动应用
+
+Q：如何让图表更"高端"？
+A：减少装饰（去边框、淡网格）、增加留白、使用渐变色、精简文字
+
+===========================================
+与Plotly的交互式图表
+===========================================
+
+如需生成可交互的图表（用于在线演示），使用Plotly：
+
+【基础模板】
+```python
+import plotly.graph_objects as go
+
+fig = go.Figure(data=[
+    go.Bar(x=categories, y=values,
+           marker=dict(color='#4A90E2'))
+])
+
+fig.update_layout(
+    title=dict(text='图表标题', font=dict(size=24, color='#2C3E50')),
+    template='plotly_white',
+    font=dict(family='PingFang HK', size=16),
+    showlegend=True
+)
+
+fig.write_html('chart_interactive.html')
+fig.show()
+```
+
+Plotly优势：
+- 鼠标悬停显示数据
+- 可缩放、可拖动
+- 导出HTML嵌入网页
+
+===========================================
+版本：v1.0
+更新日期：2025-12-17
+维护者：数据可视化组
+===========================================
